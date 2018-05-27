@@ -3,10 +3,10 @@ package tables_extractor;
 import technology.tabula.Rectangle;
 import technology.tabula.Table;
 
-class TableResult
+public class TableResult
 {
-    private Table table;
-    private Rectangle area;
+    private final Table table;
+    private final Rectangle area;
     
     public TableResult(Table table, Rectangle area){
         this.table = table;
