@@ -13,10 +13,10 @@ import technology.tabula.extractors.BasicExtractionAlgorithm;
 
 public class DocUtils{
 
-	public List<TableResult> extractTables(Page page) {
-		DetectionAlgorithm detector = new NurminenDetectionAlgorithm();
-		BasicExtractionAlgorithm tableExtractor = new BasicExtractionAlgorithm();
-		List<Rectangle> guesses = detector.detect(page);
+    public List<TableResult> extractTables(Page page) {
+        DetectionAlgorithm detector = new NurminenDetectionAlgorithm();
+        BasicExtractionAlgorithm tableExtractor = new BasicExtractionAlgorithm();
+        List<Rectangle> guesses = detector.detect(page);
         List<TableResult> tables = new ArrayList<TableResult>();
         for (Rectangle guess : guesses) {
             Page area = page.getArea(guess);
@@ -25,6 +25,6 @@ public class DocUtils{
             tables.add(new TableResult(table, guess));
         }
         return tables;
-	}
+    }
 
 }

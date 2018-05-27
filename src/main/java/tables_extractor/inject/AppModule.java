@@ -31,8 +31,8 @@ public class AppModule extends AbstractModule {
         bind(PdfFileManager.class).to(getFileManagerClass());
     }
 
-	private Class<? extends PdfFileManager> getFileManagerClass() {
-		switch (arguments.outputLayout) {
+    private Class<? extends PdfFileManager> getFileManagerClass() {
+        switch (arguments.outputLayout) {
             case Flat:
                 return FlatPdfFileManager.class;
             case Deep:
@@ -40,5 +40,5 @@ public class AppModule extends AbstractModule {
             default:
                 throw new UnsupportedOperationException(String.format("OutputLayout '%s' is not mapped.", arguments.outputLayout));
         }
-	}
+    }
 }

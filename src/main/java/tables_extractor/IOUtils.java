@@ -18,10 +18,10 @@ public class IOUtils {
     }
 
     public File[] getFiles(File pdfDirectory, final String ext) {
-		return pdfDirectory.listFiles(new FilenameFilter() {
+        return pdfDirectory.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) {
                 return name.endsWith("." + ext);
             }
         });
-	}
+    }
 }

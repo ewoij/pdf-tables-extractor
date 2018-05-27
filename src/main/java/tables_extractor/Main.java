@@ -38,7 +38,7 @@ public class Main {
             this.logger = logger;
     }
 
-	public void execute() throws SecurityException, IOException {
+    public void execute() throws SecurityException, IOException {
         logging.init();
 
         File[] pdfs = inputDir != null ? ioUtils.getFiles(inputDir, "pdf") : new File[]{ inputFile };
@@ -52,6 +52,6 @@ public class Main {
                 logger.log(Level.SEVERE, String.format("Failed to process document '%s'.", pdf), e);
             }
         }
-	}
+    }
 
 }

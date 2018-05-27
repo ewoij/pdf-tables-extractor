@@ -24,23 +24,23 @@ public class Logging
         this.outputDir = outputDir;
     }
 
-	public void init() throws SecurityException, IOException {
+    public void init() throws SecurityException, IOException {
         Handler fileHandler = createFileHandler();
         rootLogger.addHandler(fileHandler);
 
         pdfBoxLogger.setLevel(Level.SEVERE); // too many warnings
     }
 
-	private Handler createFileHandler() throws IOException {
-		File logFile = getLogFile();
+    private Handler createFileHandler() throws IOException {
+        File logFile = getLogFile();
         logFile.getParentFile().mkdirs();
-		Handler handler = new FileHandler(logFile.toString());
-		return handler;
-	}
+        Handler handler = new FileHandler(logFile.toString());
+        return handler;
+    }
 
-	private File getLogFile() {
+    private File getLogFile() {
         String formattedDate = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
-		String fileName = String.format("log-%s.log", formattedDate);
-		return new File(outputDir, fileName);
-	}
+        String fileName = String.format("log-%s.log", formattedDate);
+        return new File(outputDir, fileName);
+    }
 }

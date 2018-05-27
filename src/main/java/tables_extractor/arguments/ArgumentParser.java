@@ -40,11 +40,11 @@ public class ArgumentParser {
 
         try {
             tables_extractor.arguments.Arguments arguments = new tables_extractor.arguments.Arguments();
-			parser.parseArgs(args, arguments);
+            parser.parseArgs(args, arguments);
             return arguments;
-		} catch (ArgumentParserException e) {
+        } catch (ArgumentParserException e) {
             parser.handleError(e);
             return null;
-		}
+        }
     }
 }

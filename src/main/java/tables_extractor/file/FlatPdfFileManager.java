@@ -12,45 +12,45 @@ public class FlatPdfFileManager extends PdfFileManager{
     private final File outputDir;
     
     @Inject
-	public FlatPdfFileManager(@OutputDir File outputDir){
+    public FlatPdfFileManager(@OutputDir File outputDir){
         this.outputDir = outputDir;
     }
 
-	@Override
-	public File getTableInfoFile(File pdf, int pageNumber, int tableId) {
-		return makeDirs(new File(
+    @Override
+    public File getTableInfoFile(File pdf, int pageNumber, int tableId) {
+        return makeDirs(new File(
             outputDir,
             String.format("%s.page.%03d.table.%02d.%s", getFileName(pdf), pageNumber, tableId, "json")
         ));
-	}
+    }
 
-	@Override
-	public File getTableCsvFile(File pdf, int pageNumber, int tableId) {
-		return makeDirs(new File(
+    @Override
+    public File getTableCsvFile(File pdf, int pageNumber, int tableId) {
+        return makeDirs(new File(
             outputDir,
             String.format("%s.page.%03d.table.%02d.%s", getFileName(pdf), pageNumber, tableId, "csv")
         ));
-	}
+    }
 
-	@Override
-	public File getPageInfoFile(File pdf, int pageNumber) {
-		return makeDirs(new File(
+    @Override
+    public File getPageInfoFile(File pdf, int pageNumber) {
+        return makeDirs(new File(
             outputDir,
             String.format("%s.page.%03d.%s", getFileName(pdf), pageNumber, "json")
         ));
-	}
+    }
 
-	@Override
-	public File getPageImageFile(File pdf, int pageNumber) {
-		return makeDirs(new File(
+    @Override
+    public File getPageImageFile(File pdf, int pageNumber) {
+        return makeDirs(new File(
             outputDir,
             String.format("%s.page.%03d.%s", getFileName(pdf), pageNumber, "png")
         ));
-	}
+    }
 
-	@Override
-	public File getDocumentInfoFile(File pdf) {
-		return makeDirs(new File(
+    @Override
+    public File getDocumentInfoFile(File pdf) {
+        return makeDirs(new File(
             outputDir,
             String.format("%s.document.%s", getFileName(pdf), "json")
         ));
